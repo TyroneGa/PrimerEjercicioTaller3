@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Character : MonoBehaviour {
 
@@ -36,9 +37,6 @@ public class Character : MonoBehaviour {
 
     Rigidbody rb;
 
-    public GameObject Player;
-
-    public Transform PuntoSpawn;
 
 
     private void Start() {
@@ -62,6 +60,8 @@ public class Character : MonoBehaviour {
 
         else
             rb.drag = 0;
+
+        BackMainMenu();
     }
 
 
@@ -129,4 +129,20 @@ public class Character : MonoBehaviour {
         readyToJump = true;
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.tag == "RESTART")
+        {
+            SceneManager.LoadScene("Diseño de Nivel");
+        }
+    }
+
+    void BackMainMenu()
+    {
+        if (Input.GetButtonDown("MainMenu"))
+        {
+            SceneManager.LoadScene("StartScreen");
+            print("M PRESS");
+        }
+    }
 }

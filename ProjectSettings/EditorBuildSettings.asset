@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/StartScreen.unity
+    guid: c94fbdb5f7437354dac2019cc062d5a6
+  - enabled: 1
+    path: "Assets/Scenes/Dise\xF1o de Nivel.unity"
+    guid: 2b7adb9be2710924d878e5faea1e07cb
   m_configObjects: {}
