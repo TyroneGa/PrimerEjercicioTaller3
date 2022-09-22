@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -4621,11 +4621,11 @@ PrefabInstance:
       objectReference: {fileID: 5990640146959250053, guid: 020ff8e46f8ac4f4bab3a7401f2338f2, type: 3}
     - target: {fileID: 5990640146959250052, guid: 020ff8e46f8ac4f4bab3a7401f2338f2, type: 3}
       propertyPath: jumpForce
-      value: 15
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 5990640146959250052, guid: 020ff8e46f8ac4f4bab3a7401f2338f2, type: 3}
       propertyPath: moveSpeed
-      value: 4.5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5990640146959250052, guid: 020ff8e46f8ac4f4bab3a7401f2338f2, type: 3}
       propertyPath: PuntoSpawn
@@ -4643,6 +4643,10 @@ PrefabInstance:
       propertyPath: airMultiplier
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 5990640146959250052, guid: 020ff8e46f8ac4f4bab3a7401f2338f2, type: 3}
+      propertyPath: maxSlopeAngle
+      value: 45
+      objectReference: {fileID: 0}
     - target: {fileID: 5990640146959250053, guid: 020ff8e46f8ac4f4bab3a7401f2338f2, type: 3}
       propertyPath: m_Name
       value: Player
@@ -4653,7 +4657,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5990640146959250074, guid: 020ff8e46f8ac4f4bab3a7401f2338f2, type: 3}
       propertyPath: m_Mass
-      value: 1.2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5990640146959250075, guid: 020ff8e46f8ac4f4bab3a7401f2338f2, type: 3}
       propertyPath: m_RootOrder
@@ -6665,7 +6669,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8702035252237058681, guid: 01758e662295c9347b35b7bdee71f5b4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 01758e662295c9347b35b7bdee71f5b4, type: 3}
 --- !u!1001 &1363263242
 PrefabInstance:
