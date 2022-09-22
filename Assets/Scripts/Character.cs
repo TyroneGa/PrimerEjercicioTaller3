@@ -36,6 +36,10 @@ public class Character : MonoBehaviour {
 
     Rigidbody rb;
 
+    public GameObject Player;
+
+    public Transform PuntoSpawn;
+
 
     private void Start() {
 
@@ -124,4 +128,5 @@ public class Character : MonoBehaviour {
 
         readyToJump = true;
     }
+
 }
