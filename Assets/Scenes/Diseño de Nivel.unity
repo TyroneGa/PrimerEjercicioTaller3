@@ -4607,73 +4607,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5990640146118102325, guid: 020ff8e46f8ac4f4bab3a7401f2338f2, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5990640146118102325, guid: 020ff8e46f8ac4f4bab3a7401f2338f2, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5990640146959250052, guid: 020ff8e46f8ac4f4bab3a7401f2338f2, type: 3}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 5990640146959250053, guid: 020ff8e46f8ac4f4bab3a7401f2338f2, type: 3}
-    - target: {fileID: 5990640146959250052, guid: 020ff8e46f8ac4f4bab3a7401f2338f2, type: 3}
-      propertyPath: jumpForce
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 5990640146959250052, guid: 020ff8e46f8ac4f4bab3a7401f2338f2, type: 3}
-      propertyPath: moveSpeed
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 5990640146959250052, guid: 020ff8e46f8ac4f4bab3a7401f2338f2, type: 3}
-      propertyPath: PuntoSpawn
-      value: 
-      objectReference: {fileID: 1354315583}
-    - target: {fileID: 5990640146959250052, guid: 020ff8e46f8ac4f4bab3a7401f2338f2, type: 3}
-      propertyPath: jumpCooldown
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5990640146959250052, guid: 020ff8e46f8ac4f4bab3a7401f2338f2, type: 3}
-      propertyPath: playerHeight
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5990640146959250052, guid: 020ff8e46f8ac4f4bab3a7401f2338f2, type: 3}
-      propertyPath: airMultiplier
-      value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5990640146959250052, guid: 020ff8e46f8ac4f4bab3a7401f2338f2, type: 3}
-      propertyPath: maxSlopeAngle
-      value: 45
-      objectReference: {fileID: 0}
     - target: {fileID: 5990640146959250053, guid: 020ff8e46f8ac4f4bab3a7401f2338f2, type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 5990640146959250053, guid: 020ff8e46f8ac4f4bab3a7401f2338f2, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 5990640146959250074, guid: 020ff8e46f8ac4f4bab3a7401f2338f2, type: 3}
-      propertyPath: m_Mass
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 5990640146959250075, guid: 020ff8e46f8ac4f4bab3a7401f2338f2, type: 3}
       propertyPath: m_RootOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5990640146959250075, guid: 020ff8e46f8ac4f4bab3a7401f2338f2, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.627456
-      objectReference: {fileID: 0}
-    - target: {fileID: 5990640146959250075, guid: 020ff8e46f8ac4f4bab3a7401f2338f2, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.8
-      objectReference: {fileID: 0}
-    - target: {fileID: 5990640146959250075, guid: 020ff8e46f8ac4f4bab3a7401f2338f2, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.720208
       objectReference: {fileID: 0}
     - target: {fileID: 5990640146959250075, guid: 020ff8e46f8ac4f4bab3a7401f2338f2, type: 3}
       propertyPath: m_LocalPosition.x
