@@ -186,7 +186,7 @@ public class Character : MonoBehaviour {
     {
         if(collision.gameObject.tag == "RESTART")
         {
-            SceneManager.LoadScene("Diseño de Nivel");
+            SceneManager.LoadScene("Diseño de Nivel II");
         }
     }
 

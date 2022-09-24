@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: "Assets/Scenes/Dise\xF1o de Nivel II.unity"
     guid: e83ff4a204a65014d9f910c4e9880550
+  - enabled: 1
+    path: Assets/Scenes/Win.unity
+    guid: 4c5784a8106bb2647b576af944863732
   m_configObjects: {}
