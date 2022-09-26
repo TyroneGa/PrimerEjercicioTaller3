@@ -32,7 +32,7 @@ public class CharacterCam : MonoBehaviour{
 
         // Rotate cam and orientation
 
-        transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(xRotation, yRotation, 0), Time.deltaTime * 8f);
         orientation.rotation = Quaternion.Euler(0, yRotation, 0);
     }
 }
