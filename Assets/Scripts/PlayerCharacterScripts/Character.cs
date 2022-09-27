@@ -5,7 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class Character : MonoBehaviour {
 
+
     [Header("Movement")]
+
+    public Transform orientation;
 
     public float moveSpeed;
     public float groundDrag;
@@ -37,8 +40,6 @@ public class Character : MonoBehaviour {
     RaycastHit slopeHit;
     bool exitingSlope;
 
-
-    public Transform orientation;
 
     float horizontalInput;
     float verticalInput;
