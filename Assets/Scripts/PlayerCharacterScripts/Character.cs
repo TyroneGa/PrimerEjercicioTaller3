@@ -8,34 +8,34 @@ public class Character : MonoBehaviour {
 
     [Header("Movement")]
 
-    public Transform orientation;
+    [SerializeField] Transform orientation;
 
-    public float moveSpeed;
-    public float groundDrag;
+    [SerializeField] float moveSpeed;
+    [SerializeField] float groundDrag;
 
-    public float jumpForce;
-    public float jumpCooldown;
-    public float airMultiplier;
+    [SerializeField] float jumpForce;
+    [SerializeField] float jumpCooldown;
+    [SerializeField] float airMultiplier;
 
     bool readyToJump;
 
 
     [Header("Keybinds")]
 
-    public KeyCode jumpKey = KeyCode.Space;
+    [SerializeField] KeyCode jumpKey = KeyCode.Space;
 
 
     [Header("GroundCheck")]
 
-    public float playerHeight;
-    public LayerMask floor;
+    [SerializeField] float playerHeight;
+    [SerializeField] LayerMask floor;
 
     bool grounded;
 
 
     [Header("Slope Handling")]
 
-    public float maxSlopeAngle;
+    [SerializeField] float maxSlopeAngle;
 
     RaycastHit slopeHit;
     bool exitingSlope;
