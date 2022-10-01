@@ -38,7 +38,6 @@ public class Character : MonoBehaviour {
 
     float horizontalInput;
     float verticalInput;
-    float JumpK;
     bool running;
 
     Vector3 moveDirection;
@@ -47,13 +46,7 @@ public class Character : MonoBehaviour {
 
     Animator anim;
 
-    
-
-
-    
-
-
-
+   
     private void Start() {
 
         rb = GetComponent<Rigidbody>();

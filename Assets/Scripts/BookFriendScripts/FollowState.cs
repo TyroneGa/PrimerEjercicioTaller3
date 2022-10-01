@@ -5,6 +5,8 @@ using UnityEngine;
 public class FollowState : States {
 
     [Header("State Logic")]
+
+    public IdleState idleState;
     public GetOnPositionState getOnPositionState;
     public Transform desiredPos;
     public bool canGetToPosition;
@@ -17,10 +19,17 @@ public class FollowState : States {
     public override States RunCurrentState() {
 
         if (canGetToPosition)
-            return getOnPositionState;
+        {
 
-        else
+            getOnPositionState.enabled = true;
+            return getOnPositionState;
+        }
+
+        else {
+
+            idleState.enabled = false;
             return this;
+        }
     }
 
     private void Update() {
@@ -31,13 +40,10 @@ public class FollowState : States {
         }
 
         else {
+
             bookFriend.position = followPos.position;
-
-            if (bookFriend.position == followPos.position) {
-
-                bookFriend.rotation = Quaternion.Euler(90, followPos.rotation.y, followPos.rotation.z);
-                bookFriend.localScale = new Vector3(.5f, .5f, .5f);
-            }
+            bookFriend.rotation = Quaternion.Euler(90, followPos.rotation.y, followPos.rotation.z);
+            bookFriend.localScale = new Vector3(.5f, .5f, .5f);
         }
     }
 }

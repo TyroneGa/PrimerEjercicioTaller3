@@ -3744,11 +3744,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 379804314}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 767d9d8dde12e5743aeaa4ce25dfe71d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  followState: {fileID: 1018109091}
   bookFriend: {fileID: 1223790792}
   desiredPos: {fileID: 1001894713}
 --- !u!4 &379804316
@@ -9678,11 +9679,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1018109090}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6e182027ad5476e439b801bcd8abdc41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  idleState: {fileID: 2117572301}
   getOnPositionState: {fileID: 379804315}
   desiredPos: {fileID: 1001894713}
   canGetToPosition: 0

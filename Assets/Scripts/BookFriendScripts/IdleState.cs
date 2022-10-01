@@ -22,8 +22,11 @@ public class IdleState : States {
 
     public override States RunCurrentState() {
 
-        if (playerInRange)
+        if (playerInRange) {
+
+            followState.enabled = true;
             return followState;
+        }
 
         else
             return this;
@@ -41,8 +44,8 @@ public class IdleState : States {
         if (!playerInRange) {
 
             bookFriend.position = new Vector3(InitPos.x, Mathf.Sin(Time.time * freq) * amp + InitPos.y, InitPos.z);
-            bookFriend.localScale = new Vector3(5f, 5f, 5f);
-            bookFriend.rotation = InitRot;
+            //bookFriend.localScale = new Vector3(5f, 5f, 5f);
+            //bookFriend.rotation = InitRot;
         }
     }
 
