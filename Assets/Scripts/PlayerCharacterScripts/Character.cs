@@ -19,12 +19,7 @@ public class Character : MonoBehaviour {
 
     bool readyToJump;
 
-
-    [Header("Keybinds")]
-
-    [SerializeField] KeyCode jumpKey = KeyCode.Space;
-
-
+        
     [Header("GroundCheck")]
 
     [SerializeField] float playerHeight;
@@ -44,6 +39,7 @@ public class Character : MonoBehaviour {
     float horizontalInput;
     float verticalInput;
     float JumpK;
+    bool running;
 
     Vector3 moveDirection;
 
@@ -69,60 +65,52 @@ public class Character : MonoBehaviour {
 
     private void Update() {
 
-
+        MyInput();
         MovePlayer();
 
         // ground check
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, floor);
 
-        MyInput();
-        SpeedControl();
+        //SpeedControl();
 
-        if (grounded)
-            rb.drag = groundDrag;
+        //if (grounded)
+            //rb.drag = groundDrag;
 
-        else
-            rb.drag = 0;
+        //else
+            //rb.drag = 0;
 
         BackMainMenu();
 
-        anim.SetFloat("VerY", verticalInput);
+        anim.SetFloat("VerY", running ? verticalInput * 2 : verticalInput);
 
 
         anim.SetBool("Jump 0", readyToJump);
-
-
-
- 
     }
 
 
     void MyInput() {
 
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        verticalInput = Input.GetAxisRaw("Vertical");
-        JumpK = Input.GetAxisRaw("Jump");
-
-
+        horizontalInput = Input.GetAxis("Horizontal");
+        verticalInput = Input.GetAxis("Vertical");
+        running = Input.GetButton("Run");
 
 
         //when to jump
-        if (Input.GetKey(jumpKey) && readyToJump && grounded) {
+        if (Input.GetButton("Jump") && readyToJump && grounded) {
 
             readyToJump = false;
             Jump();
 
             Invoke(nameof(ResetJump), jumpCooldown);
         }
-
     }
 
-
+    //Usar Velocity
     void MovePlayer() {
 
         //calculate movement direcction
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
-
+        /*
         //On Slope
         if (OnSlope() && !exitingSlope) {
 
@@ -139,9 +127,27 @@ public class Character : MonoBehaviour {
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
 
         rb.useGravity = !OnSlope();
+        */
+
+        if (moveDirection.magnitude > 0) {
+
+            moveDirection = moveDirection.normalized;
+
+            if (running) {
+
+                moveDirection = moveDirection * moveSpeed * 2f;
+            }
+
+            else
+            {
+                moveDirection = moveDirection * moveSpeed;
+            }
+        }
+
+        rb.velocity = moveDirection + Vector3.up * rb.velocity.y;
     }
 
-
+    /*
     void SpeedControl() {
 
         //limiting speed on slope
@@ -163,7 +169,7 @@ public class Character : MonoBehaviour {
             }
         }
     }
-
+    */
 
     void Jump() {
 
@@ -189,7 +195,7 @@ public class Character : MonoBehaviour {
         if (Physics.Raycast(transform.position, Vector3.down, out slopeHit, playerHeight * 0.5f + 0.3f)) {
 
             float angle = Vector3.Angle(Vector3.up, slopeHit.normal);
-            return angle < maxSlopeAngle && angle != 0;
+            return angle < maxSlopeAngle && angle > 0;
         }
 
         return false;
@@ -204,7 +210,7 @@ public class Character : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "RESTART")
+        if (collision.gameObject.tag == "RESTART")
         {
             SceneManager.LoadScene("Diseño de Nivel II");
         }
