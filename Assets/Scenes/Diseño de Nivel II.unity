@@ -680,7 +680,7 @@ GameObject:
   m_Component:
   - component: {fileID: 54191154}
   m_Layer: 0
-  m_Name: TareaAi
+  m_Name: Book Friend Ai
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9687,7 +9687,6 @@ MonoBehaviour:
   idleState: {fileID: 2117572301}
   getOnPositionState: {fileID: 379804315}
   desiredPos: {fileID: 1001894713}
-  canGetToPosition: 0
   bookFriend: {fileID: 1223790792}
   followPos: {fileID: 478338503}
 --- !u!4 &1018109092
@@ -20130,42 +20129,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3459792675666046986, guid: bc90764e18f2ed64eb854f7f08529699, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3459792675666046986, guid: bc90764e18f2ed64eb854f7f08529699, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3459792675666046986, guid: bc90764e18f2ed64eb854f7f08529699, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3459792675666046986, guid: bc90764e18f2ed64eb854f7f08529699, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3459792675666046986, guid: bc90764e18f2ed64eb854f7f08529699, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3459792675666046986, guid: bc90764e18f2ed64eb854f7f08529699, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3459792675666046986, guid: bc90764e18f2ed64eb854f7f08529699, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3459792675666046986, guid: bc90764e18f2ed64eb854f7f08529699, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3459792675666046986, guid: bc90764e18f2ed64eb854f7f08529699, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3459792676198808816, guid: bc90764e18f2ed64eb854f7f08529699, type: 3}
       propertyPath: m_RootOrder
       value: 4
