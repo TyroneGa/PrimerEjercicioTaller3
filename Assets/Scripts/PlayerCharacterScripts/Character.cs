@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class Character : MonoBehaviour {
 
-
     [Header("Movement")]
+
+    Vector3 moveDirection;
 
     [SerializeField] Transform orientation;
 
@@ -16,7 +17,6 @@ public class Character : MonoBehaviour {
     [SerializeField] float jumpForce;
     [SerializeField] float jumpCooldown;
     [SerializeField] float airMultiplier;
-
     bool readyToJump;
 
         
@@ -24,26 +24,24 @@ public class Character : MonoBehaviour {
 
     [SerializeField] float playerHeight;
     [SerializeField] LayerMask floor;
-
     bool grounded;
 
 
     [Header("Slope Handling")]
 
     [SerializeField] float maxSlopeAngle;
-
     RaycastHit slopeHit;
-    bool exitingSlope;
+    //bool exitingSlope;
 
 
+    //Inputs
     float horizontalInput;
     float verticalInput;
     bool running;
 
-    Vector3 moveDirection;
 
+    //Otros
     Rigidbody rb;
-
     Animator anim;
 
    
@@ -131,8 +129,8 @@ public class Character : MonoBehaviour {
                 moveDirection = moveDirection * moveSpeed * 2f;
             }
 
-            else
-            {
+            else {
+
                 moveDirection = moveDirection * moveSpeed;
             }
         }
@@ -166,7 +164,7 @@ public class Character : MonoBehaviour {
 
     void Jump() {
 
-        exitingSlope = true;
+        //exitingSlope = true;
 
         // reset y velocity
         rb.velocity = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
@@ -179,7 +177,7 @@ public class Character : MonoBehaviour {
 
         readyToJump = true;
 
-        exitingSlope = false;
+        //exitingSlope = false;
     }
 
 

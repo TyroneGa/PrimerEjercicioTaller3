@@ -6,18 +6,18 @@ public class IdleState : States {
 
     [Header("State Logic")]
 
-    public FollowState followState;
-    public Collider col;
+    [SerializeField] FollowState followState;
+    [SerializeField] Collider col;
     bool playerInRange;
 
 
     [Header("Movement")]
 
-    public Transform bookFriend;
+    [SerializeField] Transform bookFriend;
     Vector3 InitPos;
     Quaternion InitRot;
-    public float amp;
-    public float freq;
+    [SerializeField] float amp;
+    [SerializeField] float freq;
 
 
     public override States RunCurrentState() {

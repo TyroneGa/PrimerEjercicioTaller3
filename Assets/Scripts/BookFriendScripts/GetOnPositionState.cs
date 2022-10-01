@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class GetOnPositionState : States {
 
-    public FollowState followState;
+    [SerializeField] FollowState followState;
 
-    public Transform bookFriend;
-    public Transform desiredPos;
+    [SerializeField] Transform bookFriend;
+    [SerializeField] Transform desiredPos;
 
     public override States RunCurrentState() {
 

@@ -6,20 +6,21 @@ public class FollowState : States {
 
     [Header("State Logic")]
 
-    public IdleState idleState;
-    public GetOnPositionState getOnPositionState;
-    public Transform desiredPos;
-    public bool canGetToPosition;
+    [SerializeField] IdleState idleState;
+    [SerializeField] GetOnPositionState getOnPositionState;
+
+    [SerializeField] Transform desiredPos;
+    bool canGetToPosition;
 
     [Header("Movement")]
-    public Transform bookFriend;
-    public Transform followPos;
+
+    [SerializeField] Transform bookFriend;
+    [SerializeField] Transform followPos;
 
 
     public override States RunCurrentState() {
 
-        if (canGetToPosition)
-        {
+        if (canGetToPosition) {
 
             getOnPositionState.enabled = true;
             return getOnPositionState;
@@ -41,7 +42,7 @@ public class FollowState : States {
 
         else {
 
-            bookFriend.position = followPos.position;
+            bookFriend.position = Vector3.Lerp(bookFriend.position, followPos.position, 1000f);
             bookFriend.rotation = Quaternion.Euler(90, followPos.rotation.y, followPos.rotation.z);
             bookFriend.localScale = new Vector3(.5f, .5f, .5f);
         }

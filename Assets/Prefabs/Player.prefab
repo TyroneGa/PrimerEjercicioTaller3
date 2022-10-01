@@ -153,8 +153,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3459792675666046987}
-  m_LocalRotation: {x: -0.50905293, y: -0.49078012, z: 0.4907801, w: 0.50905293}
-  m_LocalPosition: {x: 2.3407774, y: 11.947402, z: -4.7178125}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -547,7 +547,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3459792675589235573}
   m_Layer: 0
-  m_Name: CamPos2
+  m_Name: CamPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -610,7 +610,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3459792676948312424}
   m_Layer: 0
-  m_Name: FollowPos2
+  m_Name: FollowPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1413,7 +1413,7 @@ GameObject:
   - component: {fileID: 3459792676198808782}
   - component: {fileID: 3459792676198808783}
   m_Layer: 0
-  m_Name: Player2
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
