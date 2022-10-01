@@ -101,6 +101,7 @@ public class Character : MonoBehaviour {
 
         //calculate movement direcction
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
+
         /*
         //On Slope
         if (OnSlope() && !exitingSlope) {
