@@ -42,7 +42,7 @@ public class FollowState : States {
 
         else {
 
-            bookFriend.position = Vector3.Lerp(bookFriend.position, followPos.position, 1000f);
+            bookFriend.position = Vector3.Lerp(bookFriend.position, followPos.position, Time.deltaTime * 2);
             bookFriend.rotation = Quaternion.Euler(90, followPos.rotation.y, followPos.rotation.z);
             bookFriend.localScale = new Vector3(.5f, .5f, .5f);
         }
