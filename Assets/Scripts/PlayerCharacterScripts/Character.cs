@@ -48,6 +48,13 @@ public class Character : MonoBehaviour {
 
     Rigidbody rb;
 
+    Animator anim;
+
+    
+
+
+    
+
 
 
     private void Start() {
@@ -55,10 +62,12 @@ public class Character : MonoBehaviour {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         readyToJump = true;
+        anim = GetComponent<Animator>();
     }
 
 
     private void Update() {
+
 
         MovePlayer();
 
@@ -75,6 +84,8 @@ public class Character : MonoBehaviour {
             rb.drag = 0;
 
         BackMainMenu();
+
+        anim.SetFloat("VerY", verticalInput);
     }
 
 
@@ -82,6 +93,7 @@ public class Character : MonoBehaviour {
 
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
+
 
 
         //when to jump
