@@ -43,6 +43,7 @@ public class Character : MonoBehaviour {
 
     float horizontalInput;
     float verticalInput;
+    float JumpK;
 
     Vector3 moveDirection;
 
@@ -86,6 +87,13 @@ public class Character : MonoBehaviour {
         BackMainMenu();
 
         anim.SetFloat("VerY", verticalInput);
+
+
+        anim.SetBool("Jump 0", readyToJump);
+
+
+
+ 
     }
 
 
@@ -93,6 +101,8 @@ public class Character : MonoBehaviour {
 
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
+        JumpK = Input.GetAxisRaw("Jump");
+
 
 
 
@@ -104,6 +114,7 @@ public class Character : MonoBehaviour {
 
             Invoke(nameof(ResetJump), jumpCooldown);
         }
+
     }
 
 
