@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GetOnPositionState : States {
 
+    [SerializeField] StateManager stateManagerRef;
     [SerializeField] FollowState followState;
 
     [SerializeField] Transform bookFriend;
@@ -11,18 +12,20 @@ public class GetOnPositionState : States {
 
     public override States RunCurrentState() {
 
-        followState.enabled = false;
         return this;
     }
 
 
     private void Update() {
 
-        if (Vector3.Distance(desiredPos.position, this.transform.position) <= 5) {
+        if ( stateManagerRef.currentState == this ) {
 
-            bookFriend.position = desiredPos.position;
-            bookFriend.rotation = Quaternion.Euler(0, 0, 0);
-            bookFriend.localScale = new Vector3(5f, 5f, 5f);
+            if ( Vector3.Distance(desiredPos.position, this.transform.position) <= 5 ) {
+
+                bookFriend.position = desiredPos.position;
+                bookFriend.rotation = Quaternion.Euler(0, 0, 90);
+                bookFriend.localScale = new Vector3(150f, 150f, 150f);
+            }
         }
     }
 }

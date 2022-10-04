@@ -5,7 +5,7 @@ using UnityEngine;
 public class IdleState : States {
 
     [Header("State Logic")]
-
+    [SerializeField] StateManager stateManagerRef;
     [SerializeField] FollowState followState;
     [SerializeField] Collider col;
     bool playerInRange;
@@ -24,7 +24,6 @@ public class IdleState : States {
 
         if (playerInRange) {
 
-            followState.enabled = true;
             return followState;
         }
 
@@ -41,11 +40,14 @@ public class IdleState : States {
 
     private void Update() {
 
-        if (!playerInRange) {
+        if ( stateManagerRef.currentState == this ) {
 
-            bookFriend.position = new Vector3(InitPos.x, Mathf.Sin(Time.time * freq) * amp + InitPos.y, InitPos.z);
-            //bookFriend.localScale = new Vector3(5f, 5f, 5f);
-            //bookFriend.rotation = InitRot;
+            if ( !playerInRange ) {
+
+                bookFriend.position = new Vector3(InitPos.x, Mathf.Sin(Time.time * freq) * amp + InitPos.y, InitPos.z);
+                //bookFriend.localScale = new Vector3(5f, 5f, 5f);
+                bookFriend.rotation = InitRot;
+            }
         }
     }
 

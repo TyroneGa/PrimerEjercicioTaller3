@@ -6,6 +6,7 @@ public class FollowState : States {
 
     [Header("State Logic")]
 
+    [SerializeField] StateManager stateManagerRef;
     [SerializeField] IdleState idleState;
     [SerializeField] GetOnPositionState getOnPositionState;
 
@@ -22,29 +23,30 @@ public class FollowState : States {
 
         if (canGetToPosition) {
 
-            getOnPositionState.enabled = true;
             return getOnPositionState;
         }
 
         else {
 
-            idleState.enabled = false;
             return this;
         }
     }
 
     private void Update() {
 
-        if (Vector3.Distance(desiredPos.position, this.transform.position) <= 5) {
+        if ( stateManagerRef.currentState == this ) {
 
-            canGetToPosition = true;
-        }
+            if ( Vector3.Distance(desiredPos.position, this.transform.position) <= 5 ) {
 
-        else {
+                canGetToPosition = true;
+            }
 
-            bookFriend.position = Vector3.Lerp(bookFriend.position, followPos.position, Time.deltaTime * 2);
-            bookFriend.rotation = Quaternion.Euler(90, followPos.rotation.y, followPos.rotation.z);
-            bookFriend.localScale = new Vector3(.5f, .5f, .5f);
+            else {
+
+                bookFriend.position = Vector3.Lerp(bookFriend.position, followPos.position, Time.deltaTime * 2.5f);
+                bookFriend.rotation = Quaternion.Euler(0, 0, -90);
+                bookFriend.localScale = new Vector3(10f, 10f, 10f);
+            }
         }
     }
 }
