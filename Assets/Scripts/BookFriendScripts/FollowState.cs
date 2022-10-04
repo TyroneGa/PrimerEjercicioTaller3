@@ -21,10 +21,12 @@ public class FollowState : States {
 
     public override States RunCurrentState() {
 
+
         if (canGetToPosition) {
 
             return getOnPositionState;
         }
+
 
         else {
 
@@ -34,12 +36,15 @@ public class FollowState : States {
 
     private void Update() {
 
+
         if ( stateManagerRef.currentState == this ) {
+
 
             if ( Vector3.Distance(desiredPos.position, this.transform.position) <= 5 ) {
 
                 canGetToPosition = true;
             }
+
 
             else {
 

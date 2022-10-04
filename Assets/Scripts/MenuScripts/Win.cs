@@ -8,7 +8,7 @@ public class Win : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if ( collision.gameObject.tag == "Player" )
         {
 
             print("COLLISION");

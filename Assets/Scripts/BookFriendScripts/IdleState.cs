@@ -40,7 +40,9 @@ public class IdleState : States {
 
     private void Update() {
 
+
         if ( stateManagerRef.currentState == this ) {
+
 
             if ( !playerInRange ) {
 
@@ -54,6 +56,7 @@ public class IdleState : States {
 
     private void OnTriggerEnter(Collider other) {
         
+
         if (other.tag == "Player") {
 
             playerInRange = true;
