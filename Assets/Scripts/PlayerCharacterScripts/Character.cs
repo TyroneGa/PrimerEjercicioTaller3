@@ -62,14 +62,6 @@ public class Character : MonoBehaviour {
         // ground check
         grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, floor);
 
-        //SpeedControl();
-
-        //if (grounded)
-            //rb.drag = groundDrag;
-
-        //else
-            //rb.drag = 0;
-
         BackMainMenu();
 
         anim.SetFloat("VerY", running ? verticalInput * 2 : verticalInput);
@@ -102,25 +94,6 @@ public class Character : MonoBehaviour {
         //calculate movement direcction
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
-        /*
-        //On Slope
-        if (OnSlope() && !exitingSlope) {
-
-            rb.AddForce(GetSlopeMoveDirection() * moveSpeed * 20f, ForceMode.Force);
-
-            if (rb.velocity.y > 0)
-                rb.AddForce(Vector3.down * 80f, ForceMode.Force);
-        }
-
-        if (grounded)
-            rb.AddForce(moveDirection.normalized * moveSpeed * 10, ForceMode.Force);
-
-        else if (!grounded)
-            rb.AddForce(moveDirection.normalized * moveSpeed * 10f * airMultiplier, ForceMode.Force);
-
-        rb.useGravity = !OnSlope();
-        */
-
         if (moveDirection.magnitude > 0) {
 
             moveDirection = moveDirection.normalized;
@@ -139,29 +112,7 @@ public class Character : MonoBehaviour {
         rb.velocity = moveDirection + Vector3.up * rb.velocity.y;
     }
 
-    /*
-    void SpeedControl() {
 
-        //limiting speed on slope
-        if (OnSlope() && !exitingSlope) {
-
-            if (rb.velocity.magnitude > moveSpeed)
-                rb.velocity = rb.velocity.normalized * moveSpeed;
-        }
-
-        //limit velocity if needed
-        else {
-
-            Vector3 flatVel = new Vector3(rb.velocity.x, 0f, rb.velocity.z);
-
-            if (flatVel.magnitude > moveSpeed) {
-
-                Vector3 limitedVel = flatVel.normalized * moveSpeed;
-                rb.velocity = new Vector3(limitedVel.x, rb.velocity.y, limitedVel.z);
-            }
-        }
-    }
-    */
 
     void Jump() {
 
@@ -177,8 +128,6 @@ public class Character : MonoBehaviour {
     void ResetJump() {
 
         readyToJump = true;
-
-        //exitingSlope = false;
     }
 
 
