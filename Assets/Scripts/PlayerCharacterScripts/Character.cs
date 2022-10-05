@@ -57,15 +57,20 @@ public class Character : MonoBehaviour {
     private void Update() {
 
         MyInput();
-        MovePlayer();
-
-        // ground check
-        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, floor);
 
         BackMainMenu();
 
         anim.SetBool("Jump 0", readyToJump);
         anim.SetFloat("VerY", running ? verticalInput * 2 : verticalInput);
+    }
+
+
+    private void FixedUpdate() {
+
+        MovePlayer();
+
+        // ground check
+        grounded = Physics.Raycast(transform.position, Vector3.down, playerHeight * 0.5f + 0.2f, floor);
     }
 
 
@@ -126,24 +131,6 @@ public class Character : MonoBehaviour {
     void ResetJump() {
 
         readyToJump = true;
-    }
-
-
-    bool OnSlope() {
-
-        if (Physics.Raycast(transform.position, Vector3.down, out slopeHit, playerHeight * 0.5f + 0.3f)) {
-
-            float angle = Vector3.Angle(Vector3.up, slopeHit.normal);
-            return angle < maxSlopeAngle && angle > 0;
-        }
-
-        return false;
-    }
-
-
-    Vector3 GetSlopeMoveDirection() {
-
-        return Vector3.ProjectOnPlane(moveDirection, slopeHit.normal).normalized;
     }
 
 
