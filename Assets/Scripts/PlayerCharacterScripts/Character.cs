@@ -64,10 +64,8 @@ public class Character : MonoBehaviour {
 
         BackMainMenu();
 
-        anim.SetFloat("VerY", running ? verticalInput * 2 : verticalInput);
-
-
         anim.SetBool("Jump 0", readyToJump);
+        anim.SetFloat("VerY", running ? verticalInput * 2 : verticalInput);
     }
 
 
@@ -153,7 +151,7 @@ public class Character : MonoBehaviour {
     {
         if (collision.gameObject.tag == "RESTART")
         {
-            SceneManager.LoadScene("Diseño de Nivel II");
+            SceneManager.LoadScene("Nivel");
         }
     }
 
