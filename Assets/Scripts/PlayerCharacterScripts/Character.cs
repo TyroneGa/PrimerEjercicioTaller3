@@ -60,7 +60,7 @@ public class Character : MonoBehaviour {
 
         BackMainMenu();
 
-        anim.SetBool("Jump 0", readyToJump);
+        anim.SetBool("Jump 0", grounded);
         anim.SetFloat("VerY", running ? verticalInput * 2 : verticalInput);
     }
 
