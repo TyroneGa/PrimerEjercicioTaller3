@@ -8,15 +8,11 @@ public class Character : MonoBehaviour {
     [Header("Movement")]
 
     Vector3 moveDirection;
-
     [SerializeField] Transform orientation;
-
     [SerializeField] float moveSpeed;
-    [SerializeField] float groundDrag;
 
     [SerializeField] float jumpForce;
     [SerializeField] float jumpCooldown;
-    [SerializeField] float airMultiplier;
     bool readyToJump;
 
         
@@ -25,13 +21,6 @@ public class Character : MonoBehaviour {
     [SerializeField] float playerHeight;
     [SerializeField] LayerMask floor;
     bool grounded;
-
-
-    [Header("Slope Handling")]
-
-    [SerializeField] float maxSlopeAngle;
-    RaycastHit slopeHit;
-    //bool exitingSlope;
 
 
     //Inputs
@@ -76,8 +65,8 @@ public class Character : MonoBehaviour {
 
     void MyInput() {
 
-        horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
+        horizontalInput = Input.GetAxisRaw("Horizontal");
+        verticalInput = Input.GetAxisRaw("Vertical");
         running = Input.GetButton("Run");
 
 
@@ -134,18 +123,19 @@ public class Character : MonoBehaviour {
     }
 
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag == "RESTART")
-        {
+    private void OnCollisionEnter(Collision collision) {
+
+        if (collision.gameObject.tag == "RESTART") {
+
             SceneManager.LoadScene("Nivel");
         }
     }
 
-    void BackMainMenu()
-    {
-        if (Input.GetButtonDown("MainMenu"))
-        {
+
+    void BackMainMenu() {
+
+        if (Input.GetButtonDown("MainMenu")) {
+
             SceneManager.LoadScene("StartScreen");
             print("M PRESS");
         }

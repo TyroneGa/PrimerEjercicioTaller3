@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FollowState : States {
 
+
     [Header("State Logic")]
 
     [SerializeField] StateManager stateManagerRef;
@@ -13,10 +14,15 @@ public class FollowState : States {
     [SerializeField] Transform desiredPos;
     bool canGetToPosition;
 
+
     [Header("Movement")]
 
     [SerializeField] Transform bookFriend;
     [SerializeField] Transform followPos;
+
+
+    [Header("Other")]
+    [SerializeField] Collider col;
 
 
     public override States RunCurrentState() {
@@ -24,12 +30,14 @@ public class FollowState : States {
 
         if (canGetToPosition) {
 
+            col.enabled = true;
             return getOnPositionState;
         }
 
 
         else {
 
+            col.enabled = false;
             return this;
         }
     }
