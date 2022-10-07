@@ -14,7 +14,7 @@ public class Character : MonoBehaviour {
     [SerializeField] float jumpForce;
     [SerializeField] float jumpCooldown;
     bool readyToJump;
-
+    bool IsFalling;
         
     [Header("GroundCheck")]
 
@@ -27,6 +27,7 @@ public class Character : MonoBehaviour {
     float horizontalInput;
     float verticalInput;
     bool running;
+    
 
 
     //Otros
@@ -39,6 +40,7 @@ public class Character : MonoBehaviour {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
         readyToJump = true;
+        IsFalling = true;
         anim = GetComponent<Animator>();
     }
 
@@ -49,7 +51,9 @@ public class Character : MonoBehaviour {
 
         BackMainMenu();
 
-        anim.SetBool("Jump 0", grounded);
+        anim.SetBool("Jump 0", readyToJump);
+        anim.SetBool("grounded", grounded);
+        anim.SetBool("IsFalling", IsFalling);
         anim.SetFloat("VerY", running ? verticalInput * 2 : verticalInput);
     }
 
@@ -67,7 +71,7 @@ public class Character : MonoBehaviour {
 
         horizontalInput = Input.GetAxisRaw("Horizontal");
         verticalInput = Input.GetAxisRaw("Vertical");
-        running = Input.GetButton("Run");
+        running = Input.GetButton("Run"); 
 
 
         //when to jump
