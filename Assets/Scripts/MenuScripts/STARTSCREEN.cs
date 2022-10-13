@@ -25,7 +25,7 @@ public class STARTSCREEN : MonoBehaviour
     }
     public void STARTBUTTON()
     {
-        SceneManager.LoadScene("Diseño de Nivel II");
+        SceneManager.LoadScene("Nivel");
     }
 
    public void EXITBUTTON()
